@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom radio button style */
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"] + label {
+    position: relative;
+    padding-left: 2.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+input[type="radio"] + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 2px solid #EDE9FE;
+    background-color: transparent;
+}
+
+/* Change color when selected */
+input[type="radio"]:checked + label::before {
+    background-color: pink;
+}
+
+/* Increase the size of the radio button */
+input[type="radio"] + label::after {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: #805AD5;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked + label::after {
+    transform: scale(1);
+}
+
